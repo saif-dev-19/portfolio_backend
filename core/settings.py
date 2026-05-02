@@ -83,19 +83,31 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "core.wsgi.application"
 
-database_url = os.environ.get("DATABASE_URL") or os.environ.get("DATABASE_PUBLIC_URL")
+def valid_env_value(value):
+    return value and "USER:PASSWORD@HOST:PORT/DBNAME" not in value and "${{" not in value
+
+
+database_url = next(
+    (
+        value
+        for value in (
+            os.environ.get("DATABASE_URL"),
+            os.environ.get("DATABASE_PRIVATE_URL"),
+            os.environ.get("DATABASE_PUBLIC_URL"),
+        )
+        if valid_env_value(value)
+    ),
+    "",
+)
 is_railway = any(
     os.environ.get(name)
     for name in ("RAILWAY_ENVIRONMENT", "RAILWAY_PROJECT_ID", "RAILWAY_SERVICE_ID")
 )
 
-if database_url and ("USER:PASSWORD@HOST:PORT/DBNAME" in database_url or "${{" in database_url):
-    database_url = ""
-
-pg_name = os.environ.get("PGDATABASE") or os.environ.get("POSTGRES_DB")
+pg_name = os.environ.get("PGDATABASE") or os.environ.get("POSTGRES_DB") or os.environ.get("POSTGRES_DATABASE")
 pg_user = os.environ.get("PGUSER") or os.environ.get("POSTGRES_USER")
 pg_password = os.environ.get("PGPASSWORD") or os.environ.get("POSTGRES_PASSWORD")
-pg_host = os.environ.get("PGHOST")
+pg_host = os.environ.get("PGHOST") or os.environ.get("POSTGRES_HOST")
 pg_port = os.environ.get("PGPORT", "5432")
 
 if is_railway and not database_url:
@@ -115,7 +127,9 @@ if is_railway and not database_url:
     else:
         raise ImproperlyConfigured(
             "PostgreSQL settings are missing. Add DATABASE_URL to the Railway web "
-            "service, or add PGDATABASE, PGUSER, PGPASSWORD, PGHOST, and PGPORT."
+            "service, or add PGDATABASE, PGUSER, PGPASSWORD, PGHOST, and PGPORT. "
+            "If you are using Railway variable references, make sure they are saved "
+            "on the web service and show resolved values in Railway."
         )
 else:
     DATABASES = {
