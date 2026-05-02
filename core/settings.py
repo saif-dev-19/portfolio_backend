@@ -40,7 +40,6 @@ if railway_public_domain and railway_public_domain not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append(railway_public_domain)
 
 INSTALLED_APPS = [
-    "cloudinary_storage",
     "cloudinary",
     "django.contrib.admin",
     "django.contrib.auth",
