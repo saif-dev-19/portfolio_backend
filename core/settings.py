@@ -92,19 +92,39 @@ is_railway = any(
 if database_url and ("USER:PASSWORD@HOST:PORT/DBNAME" in database_url or "${{" in database_url):
     database_url = ""
 
-if is_railway and not database_url:
-    raise ImproperlyConfigured(
-        "DATABASE_URL is missing. Add a DATABASE_URL variable to the Railway web "
-        "service, preferably as a reference to ${{Postgres.DATABASE_URL}}."
-    )
+pg_name = os.environ.get("PGDATABASE") or os.environ.get("POSTGRES_DB")
+pg_user = os.environ.get("PGUSER") or os.environ.get("POSTGRES_USER")
+pg_password = os.environ.get("PGPASSWORD") or os.environ.get("POSTGRES_PASSWORD")
+pg_host = os.environ.get("PGHOST")
+pg_port = os.environ.get("PGPORT", "5432")
 
-DATABASES = {
-    "default": dj_database_url.config(
-        default=database_url or f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
-}
+if is_railway and not database_url:
+    if all([pg_name, pg_user, pg_password, pg_host]):
+        DATABASES = {
+            "default": {
+                "ENGINE": "django.db.backends.postgresql",
+                "NAME": pg_name,
+                "USER": pg_user,
+                "PASSWORD": pg_password,
+                "HOST": pg_host,
+                "PORT": pg_port,
+                "CONN_MAX_AGE": 600,
+                "CONN_HEALTH_CHECKS": True,
+            }
+        }
+    else:
+        raise ImproperlyConfigured(
+            "PostgreSQL settings are missing. Add DATABASE_URL to the Railway web "
+            "service, or add PGDATABASE, PGUSER, PGPASSWORD, PGHOST, and PGPORT."
+        )
+else:
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=database_url or f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
