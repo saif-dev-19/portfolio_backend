@@ -1,0 +1,903 @@
+[
+{
+  "model": "portfolio.hero",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.229Z",
+    "updated_at": "2026-05-02T05:51:31.599Z",
+    "name": "Mahfuzur Rahman Saif",
+    "role": "Backend Developer",
+    "headline_name": "Mahfuz",
+    "headline_role": "Backend Developer",
+    "description": "I help businesses grow by crafting amazing web experiences. If you're looking for a developer who likes to get stuff done, let's talk.",
+    "image": "",
+    "cv_file": "",
+    "cv_url": "https://drive.google.com/file/d/1ImufF-8HE51AYfQyRFBE7dybtv_uYSCK/view?usp=drive_link"
+  }
+},
+{
+  "model": "portfolio.heroinfo",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.233Z",
+    "updated_at": "2026-05-02T05:29:03.233Z",
+    "hero": 1,
+    "label": "Email",
+    "value": "mahfujurrahmansaif@gmail.com"
+  }
+},
+{
+  "model": "portfolio.heroinfo",
+  "pk": 2,
+  "fields": {
+    "is_active": true,
+    "order": 2,
+    "created_at": "2026-05-02T05:29:03.236Z",
+    "updated_at": "2026-05-02T05:29:03.236Z",
+    "hero": 1,
+    "label": "Location",
+    "value": "Bangladesh"
+  }
+},
+{
+  "model": "portfolio.heroinfo",
+  "pk": 3,
+  "fields": {
+    "is_active": true,
+    "order": 3,
+    "created_at": "2026-05-02T05:29:03.239Z",
+    "updated_at": "2026-05-02T05:29:03.239Z",
+    "hero": 1,
+    "label": "Work",
+    "value": "Onsite"
+  }
+},
+{
+  "model": "portfolio.heroinfo",
+  "pk": 4,
+  "fields": {
+    "is_active": true,
+    "order": 4,
+    "created_at": "2026-05-02T05:29:03.241Z",
+    "updated_at": "2026-05-02T05:29:03.241Z",
+    "hero": 1,
+    "label": "Link",
+    "value": "www.mahfuz.live"
+  }
+},
+{
+  "model": "portfolio.herostat",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.244Z",
+    "updated_at": "2026-05-02T05:50:15.362Z",
+    "hero": 1,
+    "value": "4",
+    "label": "Programming language"
+  }
+},
+{
+  "model": "portfolio.herostat",
+  "pk": 2,
+  "fields": {
+    "is_active": false,
+    "order": 2,
+    "created_at": "2026-05-02T05:29:03.247Z",
+    "updated_at": "2026-05-02T05:47:07.805Z",
+    "hero": 1,
+    "value": "8",
+    "label": "Development tools"
+  }
+},
+{
+  "model": "portfolio.herostat",
+  "pk": 3,
+  "fields": {
+    "is_active": true,
+    "order": 3,
+    "created_at": "2026-05-02T05:29:03.249Z",
+    "updated_at": "2026-05-02T05:50:56.346Z",
+    "hero": 1,
+    "value": "1",
+    "label": "Years of experience"
+  }
+},
+{
+  "model": "portfolio.herostat",
+  "pk": 4,
+  "fields": {
+    "is_active": true,
+    "order": 4,
+    "created_at": "2026-05-02T05:50:15.362Z",
+    "updated_at": "2026-05-02T05:50:15.362Z",
+    "hero": 1,
+    "value": "6+",
+    "label": "Projects"
+  }
+},
+{
+  "model": "portfolio.essentiallink",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.252Z",
+    "updated_at": "2026-05-02T05:29:03.252Z",
+    "hero": 1,
+    "label": "GitHub",
+    "url": "",
+    "icon": "github",
+    "color": "#181717"
+  }
+},
+{
+  "model": "portfolio.essentiallink",
+  "pk": 2,
+  "fields": {
+    "is_active": true,
+    "order": 2,
+    "created_at": "2026-05-02T05:29:03.255Z",
+    "updated_at": "2026-05-02T05:29:03.255Z",
+    "hero": 1,
+    "label": "LinkedIn",
+    "url": "",
+    "icon": "linkedin",
+    "color": "#0A66C2"
+  }
+},
+{
+  "model": "portfolio.essentiallink",
+  "pk": 3,
+  "fields": {
+    "is_active": true,
+    "order": 3,
+    "created_at": "2026-05-02T05:29:03.258Z",
+    "updated_at": "2026-05-02T05:29:03.258Z",
+    "hero": 1,
+    "label": "LeetCode",
+    "url": "",
+    "icon": "leetcode",
+    "color": "#FFA116"
+  }
+},
+{
+  "model": "portfolio.essentiallink",
+  "pk": 4,
+  "fields": {
+    "is_active": true,
+    "order": 4,
+    "created_at": "2026-05-02T05:29:03.261Z",
+    "updated_at": "2026-05-02T05:29:03.261Z",
+    "hero": 1,
+    "label": "Codeforces",
+    "url": "",
+    "icon": "codeforces",
+    "color": "#1F8ACB"
+  }
+},
+{
+  "model": "portfolio.about",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.263Z",
+    "updated_at": "2026-05-02T06:28:05.056Z",
+    "title": "About Me",
+    "greeting": "Hello!",
+    "description": "My name is Mahfuzur Rahman Saif. I specialize in backend development and scalable web systems.",
+    "image": "about/Pasted_image_CBbsJLq.png"
+  }
+},
+{
+  "model": "portfolio.skillgroup",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.266Z",
+    "updated_at": "2026-05-02T05:29:03.266Z",
+    "title": "Technologies I Use",
+    "description": ""
+  }
+},
+{
+  "model": "portfolio.skillgroup",
+  "pk": 2,
+  "fields": {
+    "is_active": true,
+    "order": 2,
+    "created_at": "2026-05-02T05:29:03.269Z",
+    "updated_at": "2026-05-02T05:29:03.269Z",
+    "title": "Development & Productivity Tools I Use",
+    "description": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.272Z",
+    "updated_at": "2026-05-02T05:29:03.272Z",
+    "group": 1,
+    "name": "C",
+    "icon_name": "c",
+    "icon_image": "",
+    "color": "#A8B9CC",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 2,
+  "fields": {
+    "is_active": true,
+    "order": 2,
+    "created_at": "2026-05-02T05:29:03.275Z",
+    "updated_at": "2026-05-02T05:29:03.275Z",
+    "group": 1,
+    "name": "C++",
+    "icon_name": "cplusplus",
+    "icon_image": "",
+    "color": "#00599C",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 3,
+  "fields": {
+    "is_active": true,
+    "order": 3,
+    "created_at": "2026-05-02T05:29:03.278Z",
+    "updated_at": "2026-05-02T05:29:03.278Z",
+    "group": 1,
+    "name": "Python",
+    "icon_name": "python",
+    "icon_image": "",
+    "color": "#3776AB",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 4,
+  "fields": {
+    "is_active": true,
+    "order": 4,
+    "created_at": "2026-05-02T05:29:03.280Z",
+    "updated_at": "2026-05-02T05:29:03.280Z",
+    "group": 1,
+    "name": "Dart",
+    "icon_name": "dart",
+    "icon_image": "",
+    "color": "#0175C2",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 5,
+  "fields": {
+    "is_active": true,
+    "order": 5,
+    "created_at": "2026-05-02T05:29:03.283Z",
+    "updated_at": "2026-05-02T05:29:03.283Z",
+    "group": 1,
+    "name": "Django",
+    "icon_name": "django",
+    "icon_image": "",
+    "color": "#092E20",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 6,
+  "fields": {
+    "is_active": true,
+    "order": 6,
+    "created_at": "2026-05-02T05:29:03.287Z",
+    "updated_at": "2026-05-02T05:29:03.287Z",
+    "group": 1,
+    "name": "Django REST Framework",
+    "icon_name": "django",
+    "icon_image": "",
+    "color": "#A30000",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 7,
+  "fields": {
+    "is_active": true,
+    "order": 7,
+    "created_at": "2026-05-02T05:29:03.290Z",
+    "updated_at": "2026-05-02T05:29:03.290Z",
+    "group": 1,
+    "name": "JWT",
+    "icon_name": "jsonwebtokens",
+    "icon_image": "",
+    "color": "#D63AFF",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 8,
+  "fields": {
+    "is_active": true,
+    "order": 8,
+    "created_at": "2026-05-02T05:29:03.293Z",
+    "updated_at": "2026-05-02T05:29:03.293Z",
+    "group": 1,
+    "name": "Redis",
+    "icon_name": "redis",
+    "icon_image": "",
+    "color": "#DC382D",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 9,
+  "fields": {
+    "is_active": true,
+    "order": 9,
+    "created_at": "2026-05-02T05:29:03.296Z",
+    "updated_at": "2026-05-02T05:29:03.296Z",
+    "group": 1,
+    "name": "Docker",
+    "icon_name": "docker",
+    "icon_image": "",
+    "color": "#2496ED",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 10,
+  "fields": {
+    "is_active": true,
+    "order": 10,
+    "created_at": "2026-05-02T05:29:03.299Z",
+    "updated_at": "2026-05-02T05:29:03.299Z",
+    "group": 1,
+    "name": "Celery",
+    "icon_name": "celery",
+    "icon_image": "",
+    "color": "#37814A",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 11,
+  "fields": {
+    "is_active": true,
+    "order": 11,
+    "created_at": "2026-05-02T05:29:03.301Z",
+    "updated_at": "2026-05-02T05:29:03.301Z",
+    "group": 1,
+    "name": "WebSocket",
+    "icon_name": "",
+    "icon_image": "",
+    "color": "#12F7D6",
+    "fallback": "WS"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 12,
+  "fields": {
+    "is_active": true,
+    "order": 12,
+    "created_at": "2026-05-02T05:29:03.304Z",
+    "updated_at": "2026-05-02T05:29:03.304Z",
+    "group": 1,
+    "name": "React",
+    "icon_name": "react",
+    "icon_image": "",
+    "color": "#61DAFB",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 13,
+  "fields": {
+    "is_active": true,
+    "order": 13,
+    "created_at": "2026-05-02T05:29:03.307Z",
+    "updated_at": "2026-05-02T05:29:03.307Z",
+    "group": 1,
+    "name": "JavaScript",
+    "icon_name": "javascript",
+    "icon_image": "",
+    "color": "#F7DF1E",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 14,
+  "fields": {
+    "is_active": true,
+    "order": 14,
+    "created_at": "2026-05-02T05:29:03.310Z",
+    "updated_at": "2026-05-02T05:29:03.310Z",
+    "group": 1,
+    "name": "HTML/CSS",
+    "icon_name": "html5",
+    "icon_image": "",
+    "color": "#E34F26",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 15,
+  "fields": {
+    "is_active": true,
+    "order": 15,
+    "created_at": "2026-05-02T05:29:03.313Z",
+    "updated_at": "2026-05-02T05:29:03.313Z",
+    "group": 1,
+    "name": "TailwindCSS",
+    "icon_name": "tailwindcss",
+    "icon_image": "",
+    "color": "#38BDF8",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 16,
+  "fields": {
+    "is_active": true,
+    "order": 16,
+    "created_at": "2026-05-02T05:29:03.316Z",
+    "updated_at": "2026-05-02T05:29:03.316Z",
+    "group": 1,
+    "name": "PostgreSQL",
+    "icon_name": "postgresql",
+    "icon_image": "",
+    "color": "#4169E1",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 17,
+  "fields": {
+    "is_active": true,
+    "order": 17,
+    "created_at": "2026-05-02T05:29:03.319Z",
+    "updated_at": "2026-05-02T05:29:03.319Z",
+    "group": 1,
+    "name": "MySQL",
+    "icon_name": "mysql",
+    "icon_image": "",
+    "color": "#4479A1",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 18,
+  "fields": {
+    "is_active": true,
+    "order": 18,
+    "created_at": "2026-05-02T05:29:03.322Z",
+    "updated_at": "2026-05-02T05:29:03.322Z",
+    "group": 1,
+    "name": "SQLite",
+    "icon_name": "sqlite",
+    "icon_image": "",
+    "color": "#003B57",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 19,
+  "fields": {
+    "is_active": true,
+    "order": 19,
+    "created_at": "2026-05-02T05:29:03.325Z",
+    "updated_at": "2026-05-02T05:29:03.325Z",
+    "group": 1,
+    "name": "Supabase",
+    "icon_name": "supabase",
+    "icon_image": "",
+    "color": "#3ECF8E",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 20,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.327Z",
+    "updated_at": "2026-05-02T05:29:03.327Z",
+    "group": 2,
+    "name": "Git",
+    "icon_name": "git",
+    "icon_image": "",
+    "color": "#F05032",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 21,
+  "fields": {
+    "is_active": true,
+    "order": 2,
+    "created_at": "2026-05-02T05:29:03.330Z",
+    "updated_at": "2026-05-02T05:29:03.330Z",
+    "group": 2,
+    "name": "GitHub",
+    "icon_name": "github",
+    "icon_image": "",
+    "color": "#181717",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 22,
+  "fields": {
+    "is_active": true,
+    "order": 3,
+    "created_at": "2026-05-02T05:29:03.333Z",
+    "updated_at": "2026-05-02T05:29:03.333Z",
+    "group": 2,
+    "name": "Vercel",
+    "icon_name": "vercel",
+    "icon_image": "",
+    "color": "#000000",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 23,
+  "fields": {
+    "is_active": true,
+    "order": 4,
+    "created_at": "2026-05-02T05:29:03.336Z",
+    "updated_at": "2026-05-02T05:29:03.336Z",
+    "group": 2,
+    "name": "Render",
+    "icon_name": "render",
+    "icon_image": "",
+    "color": "#46E3B7",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 24,
+  "fields": {
+    "is_active": true,
+    "order": 5,
+    "created_at": "2026-05-02T05:29:03.339Z",
+    "updated_at": "2026-05-02T05:29:03.339Z",
+    "group": 2,
+    "name": "Netlify",
+    "icon_name": "netlify",
+    "icon_image": "",
+    "color": "#00C7B7",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 25,
+  "fields": {
+    "is_active": true,
+    "order": 6,
+    "created_at": "2026-05-02T05:29:03.342Z",
+    "updated_at": "2026-05-02T05:29:03.342Z",
+    "group": 2,
+    "name": "Prompt Engineering",
+    "icon_name": "openai",
+    "icon_image": "",
+    "color": "#12F7D6",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 26,
+  "fields": {
+    "is_active": true,
+    "order": 7,
+    "created_at": "2026-05-02T05:29:03.345Z",
+    "updated_at": "2026-05-02T05:29:03.345Z",
+    "group": 2,
+    "name": "ChatGPT",
+    "icon_name": "openai",
+    "icon_image": "",
+    "color": "#10A37F",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 27,
+  "fields": {
+    "is_active": true,
+    "order": 8,
+    "created_at": "2026-05-02T05:29:03.348Z",
+    "updated_at": "2026-05-02T05:29:03.348Z",
+    "group": 2,
+    "name": "GitHub Copilot",
+    "icon_name": "githubcopilot",
+    "icon_image": "",
+    "color": "#6E40C9",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 28,
+  "fields": {
+    "is_active": true,
+    "order": 9,
+    "created_at": "2026-05-02T05:29:03.351Z",
+    "updated_at": "2026-05-02T05:29:03.351Z",
+    "group": 2,
+    "name": "Gemini CLI",
+    "icon_name": "googlegemini",
+    "icon_image": "",
+    "color": "#4285F4",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 29,
+  "fields": {
+    "is_active": true,
+    "order": 10,
+    "created_at": "2026-05-02T05:29:03.353Z",
+    "updated_at": "2026-05-02T05:29:03.353Z",
+    "group": 2,
+    "name": "Cursor",
+    "icon_name": "cursor",
+    "icon_image": "",
+    "color": "#FFFFFF",
+    "fallback": ""
+  }
+},
+{
+  "model": "portfolio.experience",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.356Z",
+    "updated_at": "2026-05-02T05:29:03.356Z",
+    "role": "Python Developer",
+    "company": "Softvence Agency",
+    "location": "Onsite",
+    "period": "5 Jan 2026 - Present",
+    "start_date": null,
+    "end_date": null,
+    "description": "Building backend systems with Python, Django, REST APIs, Docker, PostgreSQL, and Redis.",
+    "tags": [
+      "Python",
+      "Django",
+      "Rest API",
+      "Docker",
+      "PostgreSQL",
+      "Redis"
+    ]
+  }
+},
+{
+  "model": "portfolio.education",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.360Z",
+    "updated_at": "2026-05-02T06:00:35.734Z",
+    "degree": "Bachelor of Science in Computer Science & Engineering",
+    "school": "Bangladesh University Of Business And Technology",
+    "location": "Bangladesh",
+    "period": "2024- 2027",
+    "start_date": null,
+    "end_date": null,
+    "description": "Focused on software fundamentals, database systems, web technologies, and practical problem solving.",
+    "tags": [
+      "Data Structure",
+      "Algorithms",
+      "Databases",
+      "Opareting System",
+      "Web"
+    ]
+  }
+},
+{
+  "model": "portfolio.education",
+  "pk": 2,
+  "fields": {
+    "is_active": true,
+    "order": 2,
+    "created_at": "2026-05-02T05:55:38.374Z",
+    "updated_at": "2026-05-02T06:00:27.448Z",
+    "degree": "Diploma in Computer Science And Technology",
+    "school": "Feni Computer Institue",
+    "location": "Feni,Chittagong,Bangladesh",
+    "period": "2019-2023",
+    "start_date": null,
+    "end_date": null,
+    "description": "Specialized in Distributed Computer Science & Technology.Programming Mentor in FCI IT Club. Join-Secratary at FCI Blood Donation Club",
+    "tags": []
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.363Z",
+    "updated_at": "2026-05-02T06:10:59.310Z",
+    "title": "VirtualBazar - Freelance Platform",
+    "category": "",
+    "description": "VirtualBazar is a comprehensive freelance platform that bridges the gap between clients and talented freols, and an intuitive user interface. The platform includes advanced search filters, rating systems, milestone-based payments, and comprehensive project tracking.elancers. Built with modern web technologies, it features real-time chat, secure payment processing, project management to",
+    "details": "VirtualBazar is a comprehensive freelance platform that bridges the gap between clients and talented freols, and an intuitive user interface. The platform includes advanced search filters, rating systems, milestone-based payments, and comprehensive project tracking.elancers. Built with modern web technologies, it features real-time chat, secure payment processing, project management to",
+    "image": "projects/Pasted_image.png",
+    "github_url": "https://github.com/saif-dev-19/Freelance-Platform",
+    "live_url": "https://freelance-platform-client.vercel.app/",
+    "tags": [
+      "Django",
+      "Rest API",
+      "PostgreSQL",
+      "React",
+      "Tailwind"
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 2,
+  "fields": {
+    "is_active": true,
+    "order": 2,
+    "created_at": "2026-05-02T06:13:51.104Z",
+    "updated_at": "2026-05-02T06:19:49.073Z",
+    "title": "EventFlow - Event Management System",
+    "category": "",
+    "description": "EventFlow is a sophisticated event management system designed to streamline the entire event lifecycle. From initial planning to post-event analytics, it provides organizers with powerful tools to create memorable experiences. The system includes attendee management, real-time notifications, calendar integrations, and comprehensive reporting features.",
+    "details": "EventFlow is a sophisticated event management system designed to streamline the entire event lifecycle. From initial planning to post-event analytics, it provides organizers with powerful tools to create memorable experiences. The system includes attendee management, real-time notifications, calendar integrations, and comprehensive reporting features.",
+    "image": "projects/Pasted_image_YeKK2yN.png",
+    "github_url": "https://github.com/saif-dev-19/event_management",
+    "live_url": "https://event-management-1-wdqj.onrender.com/",
+    "tags": [
+      "Python",
+      "Django",
+      "MVT",
+      "SQLite"
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 3,
+  "fields": {
+    "is_active": true,
+    "order": 3,
+    "created_at": "2026-05-02T06:17:10.089Z",
+    "updated_at": "2026-05-02T06:17:10.089Z",
+    "title": "Phimart - E-commerce",
+    "category": "",
+    "description": "Phimart is a full-featured e-commerce platform that delivers a seamless shopping experience. Built with scalability in mind, it handles everything from product catalog management to order processing. The platform features advanced search capabilities, personalized recommendations, secure checkout, and comprehensive admin tools for inventory management.",
+    "details": "Phimart is a full-featured e-commerce platform that delivers a seamless shopping experience. Built with scalability in mind, it handles everything from product catalog management to order processing. The platform features advanced search capabilities, personalized recommendations, secure checkout, and comprehensive admin tools for inventory management.",
+    "image": "projects/Pasted_image_UWdm92h.png",
+    "github_url": "https://github.com/saif-dev-19/phimart",
+    "live_url": "https://phimart-client-e.vercel.app/",
+    "tags": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "JSON Web Token",
+      "Django REST Framework",
+      "JavaScript",
+      "React",
+      "Tailwind CSS"
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 4,
+  "fields": {
+    "is_active": true,
+    "order": 4,
+    "created_at": "2026-05-02T06:19:42.780Z",
+    "updated_at": "2026-05-02T06:19:42.780Z",
+    "title": "HealSync+ - Hospital Management System",
+    "category": "",
+    "description": "HealSync+ is an advanced hospital management system that digitizes and optimizes healthcare workflows. It provides seamless integration between different departments, enabling efficient patient care, appointment scheduling, medical records management, and billing processes. The system is designed with healthcare professionals in mind, offering intuitive interfaces and robust security features.",
+    "details": "HealSync+ is an advanced hospital management system that digitizes and optimizes healthcare workflows. It provides seamless integration between different departments, enabling efficient patient care, appointment scheduling, medical records management, and billing processes. The system is designed with healthcare professionals in mind, offering intuitive interfaces and robust security features.",
+    "image": "projects/Pasted_image_OmAZ54a.png",
+    "github_url": "https://github.com/saif-dev-19/hospital-management",
+    "live_url": "https://hospital-management-wine-gamma.vercel.app/",
+    "tags": [
+      "React",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "JavaScript"
+    ]
+  }
+},
+{
+  "model": "portfolio.certificate",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.365Z",
+    "updated_at": "2026-05-02T06:23:22.019Z",
+    "name": "CS Fundamentals With Phitron: Fall 2024",
+    "issuer": "Phitron",
+    "credential": "Certificate",
+    "credential_id": "PHBATCH66222961007",
+    "period": "",
+    "issue_date": "Nov-2025",
+    "image": "certificates/Pasted_image.png",
+    "verify_url": "https://phitron.io/verification",
+    "description": "Learn and Master Basic Programming, Data Structures, Algorithm, OOP, Database.",
+    "tags": [
+      "C",
+      "C++",
+      "Python",
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming",
+      "Databases"
+    ]
+  }
+},
+{
+  "model": "portfolio.contact",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.368Z",
+    "updated_at": "2026-05-02T05:29:03.368Z",
+    "title": "Contact",
+    "description": "I'm currently available for work",
+    "email": "mahfujurrahmansaif@gmail.com"
+  }
+},
+{
+  "model": "portfolio.footer",
+  "pk": 1,
+  "fields": {
+    "is_active": true,
+    "order": 1,
+    "created_at": "2026-05-02T05:29:03.371Z",
+    "updated_at": "2026-05-02T05:29:03.371Z",
+    "copyright_text": "© 2025 Mahfuz Saif. All rights reserved.",
+    "design_by_text": "mahfuz",
+    "design_by_url": "https://www.facebook.com/hey.mahfuz.here.ok"
+  }
+}
+]
