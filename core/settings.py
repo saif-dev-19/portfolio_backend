@@ -2,11 +2,29 @@ import os
 from pathlib import Path
 
 import dj_database_url
+from django.core.exceptions import ImproperlyConfigured
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+def load_local_env():
+    env_path = BASE_DIR / ".env"
+    if not env_path.exists():
+        return
+
+    for raw_line in env_path.read_text().splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+load_local_env()
+
+
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-change-me-for-production")
-DEBUG = os.environ.get("DEBUG", "True") == "True"
+DEBUG = os.environ.get("DEBUG", "True").lower() in {"1", "true", "yes", "on"}
 
 
 def env_list(name, default=""):
@@ -65,9 +83,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "core.wsgi.application"
 
+database_url = os.environ.get("DATABASE_URL") or os.environ.get("DATABASE_PUBLIC_URL")
+is_railway = any(
+    os.environ.get(name)
+    for name in ("RAILWAY_ENVIRONMENT", "RAILWAY_PROJECT_ID", "RAILWAY_SERVICE_ID")
+)
+
+if database_url and ("USER:PASSWORD@HOST:PORT/DBNAME" in database_url or "${{" in database_url):
+    database_url = ""
+
+if is_railway and not database_url:
+    raise ImproperlyConfigured(
+        "DATABASE_URL is missing. Add a DATABASE_URL variable to the Railway web "
+        "service, preferably as a reference to ${{Postgres.DATABASE_URL}}."
+    )
+
 DATABASES = {
     "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        default=database_url or f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
         conn_health_checks=True,
     )
