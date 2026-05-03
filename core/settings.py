@@ -189,6 +189,7 @@ CSRF_TRUSTED_ORIGINS = env_list(
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^http://localhost:517[0-9]$",
     r"^http://127\.0\.0\.1:517[0-9]$",
+    r"^https://.*\.vercel\.app$",
     "https://mahfuzur-rahman.vercel.app/",
 ]
 
