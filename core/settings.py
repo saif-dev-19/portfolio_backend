@@ -176,17 +176,20 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOWED_ORIGINS = env_list(
     "CORS_ALLOWED_ORIGINS",
+    "https://mahfuzur-rahman.vercel.app/",
     "http://localhost:5173,http://localhost:5174,http://127.0.0.1:5173,http://127.0.0.1:5174",
 )
 
 CSRF_TRUSTED_ORIGINS = env_list(
     "CSRF_TRUSTED_ORIGINS",
     "http://localhost:5173,http://localhost:5174,http://127.0.0.1:5173,http://127.0.0.1:5174",
+    "https://mahfuzur-rahman.vercel.app/",
 )
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^http://localhost:517[0-9]$",
     r"^http://127\.0\.0\.1:517[0-9]$",
+    "https://mahfuzur-rahman.vercel.app/",
 ]
 
 REST_FRAMEWORK = {
