@@ -30,7 +30,7 @@ class Command(BaseCommand):
 
         for path in files:
             relative_path = path.relative_to(media_root).as_posix()
-            public_id = str(Path(relative_path).with_suffix("")).replace("\\", "/")
+            public_id = f"media/{Path(relative_path).with_suffix('').as_posix()}"
 
             if options["dry_run"]:
                 self.stdout.write(f"Would upload {relative_path} -> {public_id}")
@@ -41,6 +41,7 @@ class Command(BaseCommand):
                 public_id=public_id,
                 resource_type="auto",
                 overwrite=True,
+                invalidate=True,
             )
             self.stdout.write(self.style.SUCCESS(f"Uploaded {relative_path}"))
 
