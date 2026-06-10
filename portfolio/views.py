@@ -47,7 +47,7 @@ class PublicPortfolioView(views.APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request):
-        serializer = PortfolioSerializer(instance=None, context={"request": request})
+        serializer = PortfolioSerializer(instance={}, context={"request": request})
         return response.Response(serializer.data)
 
 class AdminOnlyViewSet(viewsets.ModelViewSet):
