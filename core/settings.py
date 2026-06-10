@@ -84,61 +84,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "core.wsgi.application"
 
-def valid_env_value(value):
-    return value and "USER:PASSWORD@HOST:PORT/DBNAME" not in value and "${{" not in value
+import os
+import dj_database_url
 
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
-database_url = next(
-    (
-        value
-        for value in (
-            os.environ.get("DATABASE_URL"),
-            os.environ.get("DATABASE_PRIVATE_URL"),
-            os.environ.get("DATABASE_PUBLIC_URL"),
-        )
-        if valid_env_value(value)
-    ),
-    "",
-)
-is_railway = any(
-    os.environ.get(name)
-    for name in ("RAILWAY_ENVIRONMENT", "RAILWAY_PROJECT_ID", "RAILWAY_SERVICE_ID")
-)
-
-pg_name = os.environ.get("PGDATABASE") or os.environ.get("POSTGRES_DB") or os.environ.get("POSTGRES_DATABASE")
-pg_user = os.environ.get("PGUSER") or os.environ.get("POSTGRES_USER")
-pg_password = os.environ.get("PGPASSWORD") or os.environ.get("POSTGRES_PASSWORD")
-pg_host = os.environ.get("PGHOST") or os.environ.get("POSTGRES_HOST")
-pg_port = os.environ.get("PGPORT", "5432")
-
-if is_railway and not database_url:
-    if all([pg_name, pg_user, pg_password, pg_host]):
-        DATABASES = {
-            "default": {
-                "ENGINE": "django.db.backends.postgresql",
-                "NAME": pg_name,
-                "USER": pg_user,
-                "PASSWORD": pg_password,
-                "HOST": pg_host,
-                "PORT": pg_port,
-                "CONN_MAX_AGE": 600,
-                "CONN_HEALTH_CHECKS": True,
-            }
-        }
-    else:
-        raise ImproperlyConfigured(
-            "PostgreSQL settings are missing. Add DATABASE_URL to the Railway web "
-            "service, or add PGDATABASE, PGUSER, PGPASSWORD, PGHOST, and PGPORT. "
-            "If you are using Railway variable references, make sure they are saved "
-            "on the web service and show resolved values in Railway."
-        )
-else:
+if DATABASE_URL:
     DATABASES = {
         "default": dj_database_url.config(
-            default=database_url or f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+            default=DATABASE_URL,
             conn_max_age=600,
             conn_health_checks=True,
         )
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
 
 AUTH_PASSWORD_VALIDATORS = [
