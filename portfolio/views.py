@@ -35,13 +35,20 @@ from .serializers import (
 )
 
 
+# class PublicPortfolioView(views.APIView):
+#     permission_classes = [permissions.AllowAny]
+
+#     def get(self, request):
+#         serializer = PortfolioSerializer({}, context={"request": request})
+#         return response.Response(serializer.data)
+
+
 class PublicPortfolioView(views.APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request):
-        serializer = PortfolioSerializer({}, context={"request": request})
+        serializer = PortfolioSerializer(instance=None, context={"request": request})
         return response.Response(serializer.data)
-
 
 class AdminOnlyViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAdminUser]

@@ -258,7 +258,10 @@ class PortfolioSerializer(serializers.Serializer):
     footer = serializers.SerializerMethodField()
 
     def first_active(self, model):
-        return model.objects.filter(is_active=True).order_by("order", "id").first()
+        try:
+            return model.objects.filter(is_active=True).order_by("order", "id").first()
+        except Exception:
+            return None
 
     def active_many(self, model):
         return model.objects.filter(is_active=True).order_by("order", "id")
