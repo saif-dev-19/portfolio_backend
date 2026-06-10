@@ -18,13 +18,32 @@ from .models import (
 )
 
 
-class AbsoluteFileFieldMixin:
-    def absolute_url(self, value):
+# class AbsoluteFileFieldMixin:
+#     def absolute_url(self, value):
+#         if not value:
+#             return None
+#         request = self.context.get("request")
+#         url = value.url
+#         return request.build_absolute_uri(url) if request else url
+
+
+def absolute_url(self, value):
+    try:
         if not value:
             return None
+
         request = self.context.get("request")
+
+        # SAFE CHECK: file exists
+        if not hasattr(value, "url"):
+            return None
+
         url = value.url
+
         return request.build_absolute_uri(url) if request else url
+
+    except Exception:
+        return None
 
 
 class HeroInfoSerializer(serializers.ModelSerializer):
